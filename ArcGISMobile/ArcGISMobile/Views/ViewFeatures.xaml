@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:esriUI="http://schemas.esri.com/arcgis/runtime/2013"
+             xmlns:resources="clr-namespace:Resources"
+             x:Class="ArcGISMobile.Views.ViewFeatures"
+             Title="View Property Attributes">
+    <RelativeLayout>
+        <esriUI:MapView x:Name="MyMapView"
+                        BindingContext="{x:Reference Name=ResponsiveFormContainer}"
+                        Style="{StaticResource MapWithFormStyle}"
+                        GeoViewTapped="MyMapView_GeoViewTapped" />
+        <resources:ResponsiveFormContainer x:Name="ResponsiveFormContainer">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Text="Feature Id:" FontAttributes="Bold" Margin="20,0,20,0" Grid.Row="0"
+                           Grid.Column="0"/>
+                    <Label Text="Last Edit:" FontAttributes="Bold" Margin="20,0,20,0" Grid.Row="1"
+                           Grid.Column="0"/>
+                    <Label Text="Property Name:" FontAttributes="Bold" Margin="20,0,20,0" Grid.Row="2"
+                           Grid.Column="0"/>
+                    <Label Text="Evaluator Name:" FontAttributes="Bold" Margin="20,0,20,0" Grid.Row="3"
+                           Grid.Column="0"/>
+                    <Label Text="Description:" FontAttributes="Bold" Margin="20,0,20,0" Grid.Row="4"
+                           Grid.Column="0"/>
+                    <Label x:Name="ViewId" Margin="20,0,20,0" Grid.Row="0"
+                               IsEnabled="False" Grid.Column="1"/>
+                    <Label x:Name="ViewEditDate" Margin="20,0,20,0" Grid.Row="1"
+                               IsEnabled="False" Grid.Column="1"/>
+                    <Label x:Name="ViewPropertyName" Margin="20,0,20,0" Grid.Row="2"
+                               IsEnabled="False" Grid.Column="1"/>
+                    <Label x:Name="ViewEvaluatorName" Margin="20,0,20,0" Grid.Row="3"
+                               IsEnabled="False" Grid.Column="1"/>
+                    <Label x:Name="ViewDescription" Margin="20,0,20,0" Grid.Row="4"
+                                IsEnabled="False" Grid.Column="1"/>
+            </Grid>
+        </resources:ResponsiveFormContainer>
+    </RelativeLayout>
+</ContentPage>

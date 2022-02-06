@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:esriUI="http://schemas.esri.com/arcgis/runtime/2013"
+             xmlns:resources="clr-namespace:Resources"
+             x:Class="ArcGISMobile.Views.AddFeatures"
+             Title="Add Properties">
+    <RelativeLayout>
+        <esriUI:MapView x:Name="AddMapView"
+                        BindingContext="{x:Reference Name=ResponsiveFormContainer}"
+                        Style="{StaticResource MapWithFormStyle}"
+                        GeoViewTapped="AddMapView_GeoViewTapped" />
+        <resources:ResponsiveFormContainer x:Name="ResponsiveFormContainer">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                    <StackLayout Orientation="Vertical" >
+                        <Entry x:Name="AddPropertyName" Margin="20,0,20,0" Placeholder="Enter Property Name" Grid.Row="0"
+                               IsEnabled="False"/>
+                        <Entry x:Name="AddEvaluatorName" Margin="20,0,20,0" Placeholder="Enter Evaluator Name" Grid.Row="1"
+                               IsEnabled="False"/>
+                        <Editor x:Name="AddDescription" Margin="20,0,20,0" Placeholder="Enter Description" Grid.Row="2"
+                                IsEnabled="False"/>
+
+                        <Button x:Name="SubmitButton" Margin="20,0,20,0" Text="Submit Feature" Grid.Row="3" 
+                                IsEnabled="False" Clicked="Button_Clicked" />
+                        
+                    </StackLayout>
+            </Grid>
+        </resources:ResponsiveFormContainer>
+    </RelativeLayout>
+</ContentPage>

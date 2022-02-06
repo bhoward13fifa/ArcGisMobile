@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ArcGISMobile.Views.HomePage"
+             Title="Home Page">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Property Evaluations"
+                   Margin="20,0,20,0"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="View Property Map" Margin="20,0,20,0" Clicked="View_Clicked" />
+            <Button Text="Add a Property to Map" Margin="20,0,20,0" Clicked="Add_Clicked" />
+            <Button Text="Edit a Property on Map" Margin="20,0,20,0" Clicked="Edit_Clicked" />
+            <Button Text="Delete a Property From Map" Margin="20,0,20,0" Clicked="Delete_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

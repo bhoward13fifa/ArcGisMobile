@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
+			 xmlns:resources="clr-namespace:Resources"
+             x:Class="ArcGISMobile.Views.DeleteFeatures"
+             Title="Delete Properties">
+    <RelativeLayout>
+        <esriUI:MapView x:Name="DeleteMapView"
+                        BindingContext="{x:Reference Name=ResponsiveFormContainer}"
+                        Style="{StaticResource MapWithFormStyle}"
+                        GeoViewTapped="DeleteMapView_GeoViewTapped"
+                        Grid.Row="1" Grid.RowSpan="2" />
+        <resources:ResponsiveFormContainer x:Name="ResponsiveFormContainer">
+            <StackLayout>
+                <Label Text="Click to Delete a Feature"
+                   FontSize="24" FontAttributes="Bold"
+                   TextColor="Black"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="Center" />
+                <Button x:Name="DeleteButton"
+                    Text="Delete Feature"
+                    Clicked="Delete_Clicked"
+                    IsEnabled="False" />
+            </StackLayout>
+        </resources:ResponsiveFormContainer>
+    </RelativeLayout>
+</ContentPage>
